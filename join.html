@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="join.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Revolution&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=DM+Sans:ital,opsz,wght@1,9..40,100&display=swap" rel="stylesheet">
+    <title>Haiti's Hidden Beauty</title>
+</head>
+<body>
+    <div class="container">
+        <video autoplay loop muted playsinline class="explore-video">
+            <source src="../videos/explore.mp4" type="video/mp4">
+        </video>
+
+        <nav>
+            <ul>
+                <li><a href="/pages/index.html">Home</a></li>
+                <li><a href="/pages/explore.html">Explore</a></li>
+                <li><a href="/pages/join.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="row">
+                <h1>Contact Us</h1>
+        </div>
+        <div class="row">
+                <h4 style="text-align:center">We'd love to hear from you!</h4>
+        </div>
+        <div class="row input-container">
+            <form name="submit-to-google-sheet">
+                <label for="name" class="styled-input">Name</label>
+                <input type="text" id="name" name="name" required />
+
+                <label for="email"class="styled-input">Email</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="phone"class="styled-input">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required />
+
+                <label for="message"class="styled-input">Message</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button class="btn-lrg submit-btn">Send Message</button>
+               
+            </form>
+        </div>
+        
+    </div>
+    <footer class="footer">
+   
+        <ul class="social-icon">
+          <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a></li>
+        </ul>
+        <ul class="menu">
+            <li class="menu__item"><a class="menu__link" href="/pages/index.html">Home</a></li>
+            <li class="menu__item"><a class="menu__link" href="/pages/explore.html">Explore</a></li>
+            <li class="menu__item"><a class="menu__link" href="/pages/join.html">Contact</a></li>
+    
+        </ul>
+        <p>&copy;2024 Yuri Pierre-Louis | All Rights Reserved</p>
+      </footer>
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzA3KUpwk-AdDAM6UhWTLh6PdPpa1Lss2IeJaNPTox-xSqZEIX1jGTrfAeRtPHUNRqPxw/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
